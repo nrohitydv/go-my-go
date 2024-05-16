@@ -1,47 +1,48 @@
+import { CiHome } from "react-icons/ci";
 export const navLinks = [
   {
     label: "Home",
-    route: "/",
+    route: "/home",
     icon: "/assets/icons/home.svg",
   },
   {
     label: "Dashboard",
     route: "/transformations/add/restore",
-    icon: "/assets/icons/image.svg",
+    icon: "/assets/icons/dashboard.svg",
   },
   {
     label: "Projects",
     route: "/transformations/add/fill",
-    icon: "/assets/icons/stars.svg",
+    icon: "/assets/icons/projects.svg",
   },
   {
     label: "Tasks",
     route: "/transformations/add/remove",
-    icon: "/assets/icons/scan.svg",
+    icon: "/assets/icons/tasks.svg",
   },
   {
     label: "Reporting",
     route: "/transformations/add/recolor",
-    icon: "/assets/icons/filter.svg",
+    icon: "/assets/icons/reporting.svg",
   },
   {
     label: "Users",
-    route: "/transformations/add/removeBackground",
-    icon: "/assets/icons/camera.svg",
+    route: "/user",
+    icon: "/assets/icons/users.svg",
   },
   {
     label: "Support",
     route: "/profile",
-    icon: "/assets/icons/profile.svg",
+    icon: "/assets/icons/supports.svg",
   },
   {
     label: "Settings",
-    route: "/credits",
-    icon: "/assets/icons/bag.svg",
+    route: "/setting",
+    icon: "/assets/icons/settings.svg",
   },
   {
     label: "Profile",
-    route: "/credits",
-    icon: "/assets/icons/bag.svg",
+    route: "/profile",
+    icon: "/assets/icons/profile.svg",
   },
 ];
