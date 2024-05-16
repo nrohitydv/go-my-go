@@ -10,7 +10,7 @@ const IBMPlex = IBM_Plex_Sans({
 });
 export const metadata: Metadata = {
   title: "Go My Go",
-  description: "Dashboard App",
+  description: "An app for the Dashboard",
 };
 
 export default function RootLayout({
