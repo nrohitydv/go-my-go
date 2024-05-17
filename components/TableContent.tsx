@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { CiSearch } from "react-icons/ci";
 type Vendor = {
   id: number;
   name: string;
@@ -87,6 +88,24 @@ const vendors: Vendor[] = [
 const VendorTable: React.FC = () => {
   return (
     <div className="overflow-x-auto">
+      <div className="flex justify-between border border-none">
+        <div>
+          <h5 className="text-lg text-slate-900">Vendor Movements </h5>
+          <p>Keep track of vendors and their security rating. </p>
+        </div>
+        <div className="relative mb-3">
+          <CiSearch
+            fontSize={20}
+            className="text-gray-400 absolute top-1/2 -translate-y-1/2 left-3"
+          />
+
+          <input
+            type="text"
+            placeholder="Search"
+            className="text-sm focus:outline-none active:outline-none h-10 w-[24rem] border border-grey-300 rounded-sm pl-11 pr-4"
+          />
+        </div>
+      </div>
       <table className="min-w-full bg-white border border-gray-200">
         <thead>
           <tr className="w-full border-b border-gray-200">
