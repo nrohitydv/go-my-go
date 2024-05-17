@@ -1,91 +1,45 @@
 "use client";
-import React, { PureComponent } from "react";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
-
+import React from "react";
+import { LineChart, Line, CartesianGrid, Tooltip, Legend } from "recharts";
+import { XAxis, YAxis } from "recharts";
 const data = [
-  {
-    name: "Jan",
-    uv: 40,
-    pv: 24,
-    amt: 24,
-  },
-  {
-    name: "Feb",
-    uv: 30,
-    pv: 13,
-    amt: 22,
-  },
-  {
-    name: "Mar",
-    uv: 20,
-    pv: 98,
-    amt: 22,
-  },
-  {
-    name: "Apr",
-    uv: 27,
-    pv: 39,
-    amt: 20,
-  },
-  {
-    name: "May",
-    uv: 18,
-    pv: 48,
-    amt: 21,
-  },
-  {
-    name: "Jun",
-    uv: 23,
-    pv: 38,
-    amt: 25,
-  },
-  {
-    name: "Jul",
-    uv: 34,
-    pv: 43,
-    amt: 21,
-  },
+  { name: "Jan", yourRating: 65, industryAverage: 50 },
+  { name: "Feb", yourRating: 66, industryAverage: 51 },
+  { name: "Mar", yourRating: 67, industryAverage: 52 },
+  { name: "Apr", yourRating: 66, industryAverage: 53 },
+  { name: "May", yourRating: 68, industryAverage: 54 },
+  { name: "Jun", yourRating: 69, industryAverage: 55 },
+  { name: "Jul", yourRating: 70, industryAverage: 56 },
+  { name: "Aug", yourRating: 71, industryAverage: 57 },
+  { name: "Sep", yourRating: 72, industryAverage: 58 },
+  { name: "Oct", yourRating: 73, industryAverage: 59 },
+  { name: "Nov", yourRating: 74, industryAverage: 60 },
+  { name: "Dec", yourRating: 75, industryAverage: 61 },
 ];
 
-export default class Example extends PureComponent {
-  render() {
-    return (
-      <ResponsiveContainer width="100%" height="100%">
-        <LineChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis domain={[0, 100]} tickCount={11} />
-          <Tooltip />
-          <Legend />
-          <Line
-            type="monotone"
-            dataKey="pv"
-            stroke="#8884d8"
-            yAxisId={0}
-            activeDot={{ r: 8 }}
-          />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" yAxisId={0} />
-        </LineChart>
-      </ResponsiveContainer>
-    );
-  }
-}
+const AverageVendorRatingChart: React.FC = () => {
+  return (
+    <div className="flex flex-col items-center p-4 bg-white shadow rounded-lg">
+      <h2 className="text-lg font-bold mb-4">Average vendor rating</h2>
+      <p className="text-sm text-gray-500 mb-6">
+        Track how your rating compares to your industry average.
+      </p>
+      <LineChart width={500} height={300} data={data}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Line
+          type="monotone"
+          dataKey="yourRating"
+          stroke="#8884d8"
+          activeDot={{ r: 8 }}
+        />
+        <Line type="monotone" dataKey="industryAverage" stroke="#82ca9d" />
+      </LineChart>
+    </div>
+  );
+};
+
+export default AverageVendorRatingChart;

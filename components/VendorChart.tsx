@@ -1,87 +1,44 @@
 "use client";
-import { HiOutlineDotsVertical } from "react-icons/hi";
-import React, { PureComponent } from "react";
-import { PieChart, Pie, ResponsiveContainer, Cell, Tooltip } from "recharts";
+import React from "react";
+import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 
 const data = [
-  { name: "81-100", value: 250 },
-  { name: "61-80", value: 200 },
-  { name: "41-60", value: 150 },
-  { name: "21-40", value: 100 },
-  { name: "0-20", value: 50 },
+  { name: "0-20", value: 20 },
+  { name: "21-40", value: 30 },
+  { name: "41-60", value: 25 },
+  { name: "61-80", value: 15 },
+  { name: "81-100", value: 10 },
 ];
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#8884d8"];
+const COLORS = ["#E1BEE7", "#CE93D8", "#BA68C8", "#AB47BC", "#9C27B0"];
 
-export default class Example extends PureComponent {
-  render() {
-    return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          position: "relative", // Added relative positioning
-        }}
-      >
-        <div style={{ marginBottom: 10 }}>
-          <h2 className="text-xl font-bold mb-4">Vendor Breakdown</h2>
-          <div style={{ position: "absolute", top: 0, right: 0 }}>
-            <HiOutlineDotsVertical size={24} />
-          </div>
-        </div>
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          <div style={{ flex: 1 }}>
-            <PieChart width={400} height={400}>
-              <Pie
-                data={data}
-                cx="50%"
-                cy="50%"
-                labelLine={false}
-                outerRadius={80}
-                fill="#8884d8"
-                dataKey="value"
-              >
-                <HiOutlineDotsVertical />
+const VendorBreakdownChart: React.FC = () => {
+  return (
+    <div className="flex flex-col items-center p-4 bg-white shadow rounded-lg">
+      <h2 className="text-lg font-bold mb-4">Vendor breakdown</h2>
+      <PieChart width={300} height={300}>
+        <Pie
+          data={data}
+          cx={150}
+          cy={150}
+          innerRadius={60}
+          outerRadius={80}
+          fill="#8884d8"
+          paddingAngle={5}
+          dataKey="value"
+        >
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
+        <Tooltip />
+        <Legend layout="vertical" verticalAlign="middle" align="right" />
+      </PieChart>
+      <button className="mt-4 px-4 py-2 border border-slate-200 rounded hover:bg-purple-700">
+        View full report
+      </button>
+    </div>
+  );
+};
 
-                {data.map((entry, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={COLORS[index % COLORS.length]}
-                  />
-                ))}
-              </Pie>
-              <Tooltip />
-            </PieChart>
-          </div>
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "center",
-            }}
-          >
-            {data.map((entry, index) => (
-              <div
-                key={index}
-                style={{ display: "flex", alignItems: "center" }}
-              >
-                <div
-                  style={{
-                    width: 20,
-                    height: 20,
-                    backgroundColor: COLORS[index % COLORS.length],
-                    marginRight: 8,
-                  }}
-                ></div>
-                <span>{entry.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
+export default VendorBreakdownChart;

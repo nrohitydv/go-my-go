@@ -1,11 +1,7 @@
-import Header from "@/components/Header";
-import VendorChart from "@/components/VendorChart";
-
 const Home = () => {
   return (
     <main>
-      <Header />
-      <VendorChart />
+      <h1>Home</h1>
     </main>
   );
 };
