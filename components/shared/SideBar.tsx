@@ -11,7 +11,7 @@ const SideBar = () => {
     <aside className="sidebar">
       <div className="flex size-full flex-col gap-4">
         <Link href="/" className="sidebar-logo">
-          <h1 className="text-h1-color">Go My Go</h1>
+          <h1 className="text-blue-900 text-lg">Go My Go</h1>
         </Link>
         <nav className="sidebar-nav">
           <ul className="sidebar-nav_elements">
