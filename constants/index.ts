@@ -2,37 +2,37 @@ import { CiHome } from "react-icons/ci";
 export const navLinks = [
   {
     label: "Home",
-    route: "/home",
+    route: "/",
     icon: "/assets/icons/home.svg",
   },
   {
     label: "Dashboard",
-    route: "/transformations/add/restore",
+    route: "/dashboard",
     icon: "/assets/icons/dashboard.svg",
   },
   {
     label: "Projects",
-    route: "/transformations/add/fill",
+    route: "/projects",
     icon: "/assets/icons/projects.svg",
   },
   {
     label: "Tasks",
-    route: "/transformations/add/remove",
+    route: "/tasks",
     icon: "/assets/icons/tasks.svg",
   },
   {
     label: "Reporting",
-    route: "/transformations/add/recolor",
+    route: "/reporting",
     icon: "/assets/icons/reporting.svg",
   },
   {
     label: "Users",
-    route: "/user",
+    route: "/users",
     icon: "/assets/icons/users.svg",
   },
   {
     label: "Support",
-    route: "/profile",
+    route: "/support",
     icon: "/assets/icons/supports.svg",
   },
   {

@@ -1,7 +1,7 @@
-import AverageVendorRatingChart from "@/components/AverageVendorRating";
-import Header from "@/components/Header";
-import TableComponent from "@/components/TableContent";
-import VendorBreakdownChart from "@/components/VendorChart";
+import AverageVendorRatingChart from "@/components/dadhboard/AverageVendorRating";
+import Header from "@/components/dadhboard/Header";
+import TableComponent from "@/components/dadhboard/TableContent";
+import VendorBreakdownChart from "@/components/dadhboard/VendorChart";
 
 const DashBoard = () => {
   return (
