@@ -33,7 +33,7 @@ const SideBar = () => {
                 <li
                   key={link.route}
                   className={`sidebar-nav_element group ${
-                    isActive ? " text-dark" : "text-gray-700"
+                    isActive ? " bg-blue-700" : "text-gray-700"
                   }`}
                 >
                   <Link href={link.route} className="sidebar-link">
@@ -57,7 +57,7 @@ const SideBar = () => {
                 <li
                   key={link.route}
                   className={`sidebar-nav_element group ${
-                    isActive ? "bg-purple-gradient text-white" : "text-gray-700"
+                    isActive ? "bg-blue-700" : "text-gray-700"
                   }`}
                 >
                   <Link href={link.route} className="sidebar-link">
