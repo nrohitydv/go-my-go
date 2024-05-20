@@ -14,7 +14,7 @@ const data = [
 
 const COLORS = ["#E1BEE7", "#CE93D8", "#BA68C8", "#AB47BC", "#9C27B0"];
 
-const VendorBreakdownChart: React.FC = () => {
+const VendorChart: React.FC = () => {
   return (
     <div className="flex flex-col items-center p-2 bg-white shadow rounded-lg">
       <div className="flex justify-between w-full">
@@ -66,4 +66,4 @@ const VendorBreakdownChart: React.FC = () => {
   );
 };
 
-export default VendorBreakdownChart;
+export default VendorChart;

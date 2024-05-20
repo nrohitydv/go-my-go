@@ -2,20 +2,7 @@
 import React from "react";
 import { LineChart, Line, CartesianGrid, Tooltip, Legend } from "recharts";
 import { XAxis, YAxis } from "recharts";
-const data = [
-  { name: "Jan", yourRating: 65, industryAverage: 50 },
-  { name: "Feb", yourRating: 66, industryAverage: 51 },
-  { name: "Mar", yourRating: 67, industryAverage: 52 },
-  { name: "Apr", yourRating: 66, industryAverage: 53 },
-  { name: "May", yourRating: 68, industryAverage: 54 },
-  { name: "Jun", yourRating: 69, industryAverage: 55 },
-  { name: "Jul", yourRating: 70, industryAverage: 56 },
-  { name: "Aug", yourRating: 71, industryAverage: 57 },
-  { name: "Sep", yourRating: 72, industryAverage: 58 },
-  { name: "Oct", yourRating: 73, industryAverage: 59 },
-  { name: "Nov", yourRating: 74, industryAverage: 60 },
-  { name: "Dec", yourRating: 75, industryAverage: 61 },
-];
+import { data } from "@/constants";
 
 const AverageVendorRatingChart: React.FC = () => {
   return (

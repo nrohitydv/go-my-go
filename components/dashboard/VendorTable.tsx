@@ -1,89 +1,6 @@
 "use client";
-import React from "react";
 import { CiSearch } from "react-icons/ci";
-type Vendor = {
-  id: number;
-  name: string;
-  url: string;
-  rating: number;
-  ratingChange: number;
-  lastAssessed: string;
-  status: "Active" | "Inactive";
-  categories: string[];
-};
-
-const vendors: Vendor[] = [
-  {
-    id: 1,
-    name: "Catalog",
-    url: "catalogapp.io",
-    rating: 60,
-    ratingChange: 5,
-    lastAssessed: "22 Jan 2022",
-    status: "Active",
-    categories: ["Customer data", "Admin", "+4"],
-  },
-  {
-    id: 2,
-    name: "Capsule",
-    url: "getcapsule.com",
-    rating: 72,
-    ratingChange: -4,
-    lastAssessed: "20 Jan 2022",
-    status: "Active",
-    categories: ["Business data", "Admin", "+4"],
-  },
-  {
-    id: 3,
-    name: "Command+R",
-    url: "cmdr.ai",
-    rating: 78,
-    ratingChange: 6,
-    lastAssessed: "24 Jan 2022",
-    status: "Active",
-    categories: ["Customer data", "Financials"],
-  },
-  {
-    id: 4,
-    name: "Hourglass",
-    url: "hourglass.app",
-    rating: 38,
-    ratingChange: 8,
-    lastAssessed: "26 Jan 2022",
-    status: "Active",
-    categories: ["Database access", "Admin"],
-  },
-  {
-    id: 5,
-    name: "Layers",
-    url: "getlayers.io",
-    rating: 42,
-    ratingChange: -1,
-    lastAssessed: "18 Jan 2022",
-    status: "Active",
-    categories: ["Salesforce", "Admin", "+4"],
-  },
-  {
-    id: 6,
-    name: "Quotient",
-    url: "quotient.co",
-    rating: 66,
-    ratingChange: -6,
-    lastAssessed: "28 Jan 2022",
-    status: "Active",
-    categories: ["Business data", "Admin", "+4"],
-  },
-  {
-    id: 7,
-    name: "Sisyphus",
-    url: "sisyphus.com",
-    rating: 91,
-    ratingChange: 2,
-    lastAssessed: "16 Jan 2022",
-    status: "Inactive",
-    categories: ["Customer data", "Financials"],
-  },
-];
+import { vendors } from "@/constants";
 
 const VendorTable: React.FC = () => {
   return (
@@ -202,9 +119,13 @@ const VendorTable: React.FC = () => {
         </tbody>
       </table>
       <div className="flex justify-between items-center p-4">
-        <button className="text-blue-500 hover:underline">Previous</button>
+        <button className="text-blue-500 border rounded-sm hover:bg-slate-300">
+          Previous
+        </button>
         <span className="text-sm text-gray-500">Page 1 of 10</span>
-        <button className="text-blue-500 hover:underline">Next</button>
+        <button className="text-blue-500 border rounded-sm hover:bg-slate-300">
+          Next
+        </button>
       </div>
     </div>
   );
