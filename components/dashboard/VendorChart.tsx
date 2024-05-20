@@ -1,7 +1,6 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
-
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
 
 const data = [
@@ -15,24 +14,40 @@ const data = [
 const COLORS = ["#E1BEE7", "#CE93D8", "#BA68C8", "#AB47BC", "#9C27B0"];
 
 const VendorChart: React.FC = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleButtonClick = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
-    <div className="flex flex-col items-center p-2 bg-white shadow rounded-lg">
-      <div className="flex justify-between w-full">
+    <div
+      className={`flex flex-col items-center p-2 bg-white shadow rounded-lg ${
+        isExpanded ? "fixed inset-0 z-50 p-8 bg-white" : ""
+      }`}
+    >
+      <div className="flex justify-between w-full relative">
         <h2 className="text-lg font-bold mb-4">Vendor breakdown</h2>
-        <div>
-          <BsThreeDotsVertical />
+        <div className="relative group">
+          <BsThreeDotsVertical className="cursor-pointer" />
+          <div className="absolute right-0 mt-2 p-2 w-24 bg-blue-500 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Edit
+          </div>
         </div>
       </div>
 
-      <div className="flex">
+      <div className={`flex ${isExpanded ? "flex-col md:flex-row" : ""}`}>
         <div className="flex-shrink-0">
-          <PieChart width={300} height={300}>
+          <PieChart
+            width={isExpanded ? 500 : 250}
+            height={isExpanded ? 500 : 250}
+          >
             <Pie
               data={data}
-              cx={150}
-              cy={150}
-              innerRadius={60}
-              outerRadius={80}
+              cx={isExpanded ? 250 : 150}
+              cy={isExpanded ? 250 : 150}
+              innerRadius={isExpanded ? 100 : 60}
+              outerRadius={isExpanded ? 200 : 80}
               fill="#8884d8"
               paddingAngle={5}
               dataKey="value"
@@ -47,7 +62,7 @@ const VendorChart: React.FC = () => {
             <Tooltip />
           </PieChart>
         </div>
-        <div className="flex flex-col justify-center ml-2">
+        <div className="flex flex-col justify-center ml-2 mt-4 md:mt-0">
           {data.map((entry, index) => (
             <div key={`legend-${index}`} className="flex items-center mb-2">
               <div
@@ -59,8 +74,11 @@ const VendorChart: React.FC = () => {
           ))}
         </div>
       </div>
-      <button className="mt-4 px-4 py-2 border border-slate-200 rounded hover:bg-purple-700">
-        View full report
+      <button
+        className="mt-4 px-4 py-2 border border-slate-200 rounded hover:bg-purple-700"
+        onClick={handleButtonClick}
+      >
+        {isExpanded ? "Close full report" : "View full report"}
       </button>
     </div>
   );

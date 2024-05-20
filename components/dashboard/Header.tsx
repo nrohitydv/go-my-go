@@ -17,17 +17,17 @@ const Header = () => {
             <CiSearch className="absolute top-1/2 transform -translate-y-1/2 right-3 h-5 w-5 text-gray-500" />
           </div>
 
-          <button className="flex items-center h-10 px-6 font-semibold rounded-md border border-slate-200 hidden sm:flex">
+          <button className="flex items-center h-10 px-6 font-semibold rounded-md border border-slate-200 hidden sm:flex hover:bg-slate-300">
             <HiAdjustments className="mr-2 h-5 w-5" />
             Filters
           </button>
 
-          <button className="flex items-center h-10 px-6 font-semibold rounded-md border border-slate-200">
+          <button className="flex items-center h-10 px-6 font-semibold rounded-md border border-slate-200 hover:bg-slate-300">
             <BiCustomize className="mr-2 h-5 w-5" />
             Customize
           </button>
 
-          <button className="flex items-center h-10 px-6 font-semibold rounded-md border border-slate-200">
+          <button className="flex items-center h-10 px-6 font-semibold rounded-md border border-slate-200 hover:bg-slate-300">
             <CiExport className="mr-2 h-5 w-5" />
             Export
           </button>

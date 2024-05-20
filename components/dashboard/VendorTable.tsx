@@ -1,25 +1,26 @@
-"use client";
+import React from "react";
 import { CiSearch } from "react-icons/ci";
 import { vendors } from "@/constants";
 
-const VendorTable: React.FC = () => {
+const VendorTable = () => {
   return (
     <div className="overflow-x-auto">
-      <div className="flex justify-between border border-none">
+      <div className="flex justify-between border-b border-gray-200 p-4">
         <div>
-          <h5 className="text-lg text-slate-900">Vendor Movements </h5>
-          <p>Keep track of vendors and their security rating. </p>
+          <h5 className="text-lg text-slate-900">Vendor Movements</h5>
+          <p className="text-sm text-gray-600">
+            Keep track of vendors and their security rating.
+          </p>
         </div>
-        <div className="relative mb-3">
+        <div className="relative">
           <CiSearch
             fontSize={20}
             className="text-gray-400 absolute top-1/2 -translate-y-1/2 left-3"
           />
-
           <input
             type="text"
             placeholder="Search"
-            className="text-sm focus:outline-none active:outline-none h-10 w-[24rem] border border-grey-300 rounded-sm pl-11 pr-4"
+            className="text-sm focus:outline-none active:outline-none h-10 w-96 border border-gray-300 rounded-sm pl-11 pr-4"
           />
         </div>
       </div>
@@ -37,6 +38,9 @@ const VendorTable: React.FC = () => {
             </th>
             <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
               Categories
+            </th>
+            <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Status
             </th>
             <th className="px-4 py-2"></th>
           </tr>
@@ -91,6 +95,13 @@ const VendorTable: React.FC = () => {
                     {category}
                   </span>
                 ))}
+              </td>
+              <td className="px-4 py-2">
+                {vendor.status ? (
+                  <span className="text-green-500">Active</span>
+                ) : (
+                  <span className="text-red-500">Inactive</span>
+                )}
               </td>
               <td className="px-4 py-2 flex justify-end space-x-2">
                 <button className="text-gray-500 hover:text-gray-700">

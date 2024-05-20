@@ -52,7 +52,7 @@ type Vendor = {
   rating: number;
   ratingChange: number;
   lastAssessed: string;
-  status: "Active" | "Inactive";
+  status: boolean;
   categories: string[];
 };
 
@@ -64,8 +64,8 @@ export const vendors: Vendor[] = [
     rating: 60,
     ratingChange: 5,
     lastAssessed: "22 Jan 2022",
-    status: "Active",
     categories: ["Customer data", "Admin", "+4"],
+    status: true,
   },
   {
     id: 2,
@@ -74,8 +74,8 @@ export const vendors: Vendor[] = [
     rating: 72,
     ratingChange: -4,
     lastAssessed: "20 Jan 2022",
-    status: "Active",
     categories: ["Business data", "Admin", "+4"],
+    status: true,
   },
   {
     id: 3,
@@ -84,8 +84,8 @@ export const vendors: Vendor[] = [
     rating: 78,
     ratingChange: 6,
     lastAssessed: "24 Jan 2022",
-    status: "Active",
     categories: ["Customer data", "Financials"],
+    status: true,
   },
   {
     id: 4,
@@ -94,8 +94,8 @@ export const vendors: Vendor[] = [
     rating: 38,
     ratingChange: 8,
     lastAssessed: "26 Jan 2022",
-    status: "Active",
     categories: ["Database access", "Admin"],
+    status: true,
   },
   {
     id: 5,
@@ -104,8 +104,8 @@ export const vendors: Vendor[] = [
     rating: 42,
     ratingChange: -1,
     lastAssessed: "18 Jan 2022",
-    status: "Active",
     categories: ["Salesforce", "Admin", "+4"],
+    status: true,
   },
   {
     id: 6,
@@ -114,8 +114,8 @@ export const vendors: Vendor[] = [
     rating: 66,
     ratingChange: -6,
     lastAssessed: "28 Jan 2022",
-    status: "Active",
     categories: ["Business data", "Admin", "+4"],
+    status: true,
   },
   {
     id: 7,
@@ -124,8 +124,8 @@ export const vendors: Vendor[] = [
     rating: 91,
     ratingChange: 2,
     lastAssessed: "16 Jan 2022",
-    status: "Inactive",
     categories: ["Customer data", "Financials"],
+    status: false,
   },
 ];
 
