@@ -9,7 +9,7 @@ const SupportPage: React.FC = () => {
             Support Page
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            We're here to help you. Please fill out the form below to get in
+            We are here to help you. Please fill out the form below to get in
             touch.
           </p>
         </div>
