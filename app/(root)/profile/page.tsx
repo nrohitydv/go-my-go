@@ -7,7 +7,7 @@ const ProfilePage: React.FC = () => {
         <div className="flex items-center space-x-4">
           <div>
             <h2 className="text-xl font-semibold text-gray-900">John Doe</h2>
-            <p className="text-gray-600">john@example.com</p>
+            <p className="text-gray-600">john.doe@example.com</p>
           </div>
         </div>
         <div className="mt-4">

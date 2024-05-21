@@ -13,7 +13,7 @@ const Header = () => {
         </div>
         <div className="flex items-center space-x-1">
           <div className="relative hidden sm:flex">
-            <input type="text" className="rounded-md py-1 px-3" />
+            <input type="text" className=" rounded-md  py-1 px-3" />
             <CiSearch className="absolute top-1/2 transform -translate-y-1/2 right-3 h-5 w-5 text-gray-500" />
           </div>
 
