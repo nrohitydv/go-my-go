@@ -11,7 +11,7 @@ const AverageVendorRatingChart: React.FC = () => {
       <p className="text-sm text-gray-500 mb-6">
         Track how your rating compares to your industry average.
       </p>
-      <LineChart width={600} height={350} data={data}>
+      <LineChart width={600} height={250} data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
         <YAxis />
